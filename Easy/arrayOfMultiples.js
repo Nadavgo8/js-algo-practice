@@ -11,8 +11,17 @@ Notes
 Notice that num is also included in the returned array.
 */
 
-function arrayOfMultiples(/*args*/) {
-  //test
+function arrayOfMultiples(num, length) {
+  if (arguments.length < 2) {
+    console.log("Not enough arguments");
+    return;
+  }
+  const arr = [];
+  for (let i = 0; i < length; i++) {
+    arr.push((i + 1) * num);
+  }
+  return arr;
 }
+arrayOfMultiples(7, 5);
 
 exports.solution = arrayOfMultiples;
