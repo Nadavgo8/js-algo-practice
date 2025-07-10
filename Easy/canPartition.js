@@ -13,8 +13,28 @@ The array may contain duplicates.
 Multiple solutions can exist, any solution is sufficient to return true.
 */
 
-function canPartition( /*args*/ ) {
-  //your code
-}
+function canPartition(arr) {
+  let numOfZeros = 0;
+  for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] === 0) {
+      numOfZeros++;
+    }
+  }
+  if (numOfZeros === 1) {
+    return false;
+  }
+  if (numOfZeros > 1) {
+    return true;
+  }
+  const arrProd = arr.reduce((product, current) => product * current);
+  console.log(arrProd);
+  for (const item of arr) {
+    if (item !== 0 && item === arrProd / item) {
+      return true; // found such an item
+    }
+  }
 
+  return false; // no such item
+}
+console.log(canPartition([-1, 0, -0]));
 exports.solution = canPartition;
