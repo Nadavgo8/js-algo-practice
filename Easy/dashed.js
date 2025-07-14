@@ -10,8 +10,9 @@ Notes
 A string can contain uppercase and lowercase vowels.
 */
 
-function dashed( /*args*/ ) {
-  //your code
+function dashed(str) {
+  return str.replace(/([aeiou])/gi, "-$1-");
 }
+console.log(dashed("wassup"));
 
 exports.solution = dashed;
