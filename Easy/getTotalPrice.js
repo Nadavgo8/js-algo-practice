@@ -40,8 +40,12 @@ Notes
 There might be a floating point precision problem in here...
 */
 
-function getTotalPrice( /*args*/ ) {
-  //your code
+function getTotalPrice(arr) {
+  let sum = 0;
+  for (const prod of arr) {
+    sum += prod["quantity"] * prod["price"];
+  }
+  return Math.round(sum * 100) / 100;
 }
 
 exports.solution = getTotalPrice;
