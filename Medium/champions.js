@@ -62,5 +62,3 @@ function champions(teams) {
 }
 
 exports.solution = champions;
-
-exports.solution = champions;
