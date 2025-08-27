@@ -14,8 +14,15 @@ Notes
 A number can consist of any number of digits, so long as the numbers are adjacent to each other, and the string has at least two of them.
 */
 
-function ascending( /*args*/ ) {
-  //your code
+function ascending(s) {
+  if (!/^\d+$/.test(s)) return false;
+  for (let len = 1; len <= Math.floor(s.length / 2); len++) {
+    let start = BigInt(s.slice(0, len));
+    let built = "";
+    for (let x = start; built.length < s.length; x++) built += String(x);
+    if (built === s) return true;
+  }
+  return false;
 }
 
 exports.solution = ascending;
